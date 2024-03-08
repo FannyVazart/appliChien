@@ -1,22 +1,8 @@
 
 <script setup>
-import { useCounterStore } from '@/stores/counter.js'
-import { createApp, ref } from 'vue'
+import { useDataStore } from '@/stores/momentDog.js'
 
-const counterStore = useCounterStore();
-
-createApp({
-  setup() {
-    return {
-      eliaAm: ref(false),
-      eliaPm: ref(false),
-      nouteAm: ref(false),
-      noutePm: ref(false),
-      soniAm: ref(false),
-      soniPm: ref(false)
-    };
-  }
-}).mount("#genTable")
+const momentDogStore = useDataStore();
 
  // function reinitializeTable(date) {
  //   if (date.getHours() === 0 && date.getMinutes() === 0 && date.getSeconds() === 0) {
@@ -39,15 +25,15 @@ createApp({
     </tr>
     <tr>
       <th> Matin </th>
-      <td> <input type="checkbox" class="check" v-model="eliaAm"> </td>
-      <td> <input type="checkbox" class="check" v-model="nouteAm"> </td>
-      <td> <input type="checkbox" class="check" v-model="soniAm"> </td>
+      <td> <input type="checkbox" class="check" v-model="momentDogStore.eliaAm"> </td>
+      <td> <input type="checkbox" class="check" v-model="momentDogStore.nouteAm"> </td>
+      <td> <input type="checkbox" class="check" v-model="momentDogStore.soniAm"> </td>
     </tr>
     <tr>
       <th> Soir </th>
-      <td> <input type="checkbox" class="check" v-model="eliaPm"> </td>
-      <td> <input type="checkbox" class="check" v-model="noutePm"> </td>
-      <td> <input type="checkbox" class="check" v-model="noutePm"> </td>
+      <td> <input type="checkbox" class="check" v-model="momentDogStore.eliaPm"> </td>
+      <td> <input type="checkbox" class="check" v-model="momentDogStore.noutePm"> </td>
+      <td> <input type="checkbox" class="check" v-model="momentDogStore.soniPm"> </td>
     </tr>
   </table>
 </template>

@@ -1,11 +1,11 @@
 <template>
   <div class="summary">
-    <Summary :eliaAm="true"
-             :eliaPm="false"
-             :nouteAm="true"
-             :noutePm="true"
-             :soniAm="false"
-             :soniPm="true"
+    <Summary :eliaAm="momentDogStore.eliaAm"
+             :eliaPm="momentDogStore.eliaPm"
+             :nouteAm="momentDogStore.nouteAm"
+             :noutePm="momentDogStore.noutePm"
+             :soniAm="momentDogStore.soniAm"
+             :soniPm="momentDogStore.soniPm"
              :date="new Date()"
     ></Summary>
   </div>
@@ -17,8 +17,8 @@
 <script setup>
 import Summary from '@/components/Summary.vue'
 // import Tableau from '@/components/Tableau.vue'
-import { useCounterStore } from '@/stores/counter.js'
+import { useDataStore } from '@/stores/momentDog.js'
 
-const counterStore = useCounterStore();
+const momentDogStore = useDataStore();
 
 </script>
